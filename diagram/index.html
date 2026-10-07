@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="color-scheme" content="light"><meta name="description" content="的場物販before after ストーリー図解"><title>的場物販before after ストーリー図解</title><style>/* 自立したHTML・CSS。外部フォント、ライブラリ、通信は使用しない。 */
+:root{--paper:#faf9f5;--white:#fff;--ink:#24313c;--muted:#566470;--line:#d5dce0;--before:#536579;--before-soft:#eef2f6;--teal:#12685d;--teal-soft:#e8f4ef;--gold:#895019;--gold-soft:#fff2dc;--rust:#a4452c;--radius:24px}
+*{box-sizing:border-box}
+html{font-family:-apple-system,BlinkMacSystemFont,"Hiragino Kaku Gothic ProN","Hiragino Sans","Yu Gothic",Meiryo,sans-serif;color:var(--ink);background:var(--paper);line-break:strict;overflow-wrap:anywhere;-webkit-text-size-adjust:100%;text-size-adjust:100%}
+body{margin:0;font-size:16px;line-height:1.8;letter-spacing:.025em}
+main{max-width:1160px;margin:auto;padding:0 64px}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{font-weight:800;line-height:1.5;letter-spacing:.035em}
+h1{font-size:clamp(26px,3.2vw,40px);text-wrap:balance}
+h2{font-size:clamp(25px,3.05vw,37px);text-wrap:balance}
+h3{font-size:20px}
+strong{font-weight:800}
+a{color:var(--teal);text-underline-offset:5px}
+a:focus-visible{outline:3px solid var(--teal);outline-offset:5px;border-radius:3px}
+.cover{padding:70px 0 60px;border-bottom:1px solid var(--line)}
+.cover h1{margin-bottom:42px;padding-left:22px;border-left:5px solid var(--teal)}
+.overview{display:grid;grid-template-columns:minmax(0,1fr) 38px minmax(0,1fr);gap:16px;align-items:center}
+.overview-card{padding:28px 30px 24px;border-radius:var(--radius);min-height:260px;border:1px solid #d2dce4;position:relative;overflow:hidden}
+.overview-card:after{content:"";position:absolute;width:170px;height:170px;right:-65px;top:-65px;border:1px solid currentColor;border-radius:50%;opacity:.13;pointer-events:none}
+.overview-card.before{background:var(--before-soft);color:#42546a}
+.overview-card.after{background:var(--teal-soft);color:var(--teal);border-color:#badbcf}
+.phase{font-size:14px;font-weight:800;letter-spacing:.12em}
+.overview-quote{font-size:clamp(22px,2.4vw,29px);font-weight:800;line-height:1.65;margin-top:20px}
+.overview-tail{font-size:14px;padding-top:20px;margin-top:22px;border-top:1px solid #c8d3dd}
+.after .overview-tail{border-color:#bad5c9}
+.arrow{font-size:26px;font-weight:400;text-align:center;display:inline-block;flex-shrink:0;color:#788c98;line-height:1}
+.overview-arrow{font-size:31px;color:var(--teal)}
+.story{position:relative}
+.section-phase{font-size:17px;letter-spacing:.12em;font-weight:800;margin-top:48px;display:flex;gap:15px;align-items:center;color:var(--before)}
+.section-phase:before{content:"";display:block;width:11px;height:11px;border-radius:50%;background:currentColor;box-shadow:0 0 0 6px #e4e9ee}
+.chapter{padding:48px 0 60px;border-bottom:1px solid var(--line)}
+.chapter h2{margin-bottom:32px}
+.support{color:var(--muted);font-size:15px;line-height:1.9}
+.large-note{font-size:23px;font-weight:700;line-height:1.75;margin-bottom:17px}
+.university-layout{display:grid;grid-template-columns:1.25fr 1fr;gap:45px;align-items:center}
+.loop{position:relative;min-height:340px;width:100%;max-width:500px}
+.loop-track{position:absolute;inset:52px 64px;border:2px dashed #b9c6d1;border-radius:50%}
+.loop-center{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);font-size:15px;color:var(--before);font-weight:700;white-space:nowrap}
+.loop-node{position:absolute;min-width:148px;background:#fff;border:1px solid #ced8e0;border-radius:14px;padding:13px 17px;text-align:center;box-shadow:0 4px 14px #24313c05;font-size:15px;line-height:1.6;z-index:1}
+.loop-node strong{display:block;font-size:17px}
+.node-top{top:4px;left:50%;transform:translateX(-50%)}
+.node-right{right:0;top:50%;transform:translateY(-50%)}
+.node-bottom{bottom:4px;left:50%;transform:translateX(-50%)}
+.node-left{left:0;top:50%;transform:translateY(-50%)}
+.loop-arrow{position:absolute;color:#73879a;font-size:27px;line-height:1;z-index:2}
+.la1{top:66px;right:73px}.la2{bottom:63px;right:73px}.la3{bottom:63px;left:73px}.la4{top:66px;left:73px}
+.cause-flow{display:grid;grid-template-columns:1fr 25px 1.25fr 25px 1.5fr;gap:16px;align-items:center}
+.cause-cell{border-top:4px solid #9caebc;background:white;align-self:stretch;padding:24px 20px;border-radius:0 0 12px 12px}
+.cause-word{font-weight:800;font-size:20px;line-height:1.6;margin-bottom:12px}
+.cause-cell .support{font-size:14px}
+.statement{border-radius:18px;padding:28px 32px;margin-top:28px;text-align:center}
+.statement-text{font-size:clamp(22px,2.5vw,29px);font-weight:800;line-height:1.6;text-wrap:balance}
+.statement .support{margin-top:14px}
+.pale{background:var(--before-soft);color:var(--before)}
+.day-board{border:1px solid #ced7dd;border-radius:var(--radius);background:#fff;overflow:hidden}
+.day-range{display:grid;grid-template-columns:auto 1fr auto;gap:28px;align-items:center;padding:32px;background:#eef2f6}
+.time-point{display:flex;flex-direction:column;gap:5px}
+.time{font-size:33px;letter-spacing:-.015em;line-height:1.5;font-variant-numeric:tabular-nums}
+.time-label{font-size:14px;color:var(--before)}
+.time-point.end{text-align:right}
+.day-line{height:19px;display:flex;gap:6px;position:relative}
+.day-line:before{content:"";background:#8a9eaf;position:absolute;height:2px;width:100%;top:50%}
+.day-line i{display:block;flex:1;background:#b4c1cd;z-index:1;border-radius:2px}
+.pain-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));padding:26px 12px}
+.pain-grid>div{padding:0 22px;border-right:1px solid var(--line)}
+.pain-grid>div:last-child{border-right:0}
+.pain-grid h3{font-size:18px;color:var(--before);margin-bottom:10px}
+.pain-grid .support{font-size:14px}
+.isolation{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;align-items:center;text-align:center;margin:38px 0 30px;padding:12px 0}
+.pair-dots{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:14px;height:56px}
+.pair-dots i{width:25px;height:25px;border:2px solid #8397a8;border-radius:50%;background:#e7edf2}
+.isolation-middle{color:var(--muted);font-size:15px}
+.isolation-middle .arrow{display:block;font-size:34px;margin-top:6px}
+.solo-dot{width:62px;height:62px;border:1px dashed #9badbd;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center}
+.solo-dot i{display:block;width:22px;height:22px;background:#5d7286;border-radius:50%}
+.strong-label{font-size:18px;font-weight:800;line-height:1.65}
+.sorrow{background:#e9edf2;color:#3d4f64;border-left:4px solid #74869a;border-radius:0 18px 18px 0}
+.success-strip{display:flex;align-items:center;gap:20px;padding:23px 25px;border:1px solid #c9d5dc;border-radius:16px;background:#fff}
+.success-strip>div:first-child{font-size:15px}
+.success-strip .strong-label{font-size:19px}
+.joy{margin-left:auto;font-size:14px;padding:10px 15px;background:#eef2f6;border-radius:10px;color:#475d6e}
+.anticipation{text-align:center;margin:34px 0 22px;color:var(--muted);font-size:18px;line-height:1.75}
+.contract-result{display:grid;grid-template-columns:1fr 70px 1fr;align-items:stretch;gap:12px}
+.contract-amount,.bonus-amount{padding:28px 22px;text-align:center;border-radius:20px;background:#eef2f6;border:1px solid #cbd6df}
+.bonus-amount{background:#fff0e8;border-color:#e7bcaa;color:#993d26}
+.metric-label{font-size:15px;font-weight:700;letter-spacing:.08em}
+.big-number{display:flex;align-items:baseline;justify-content:center;gap:8px;margin:9px 0 0;line-height:1.3;letter-spacing:-.025em}
+.digits{font-size:clamp(55px,6.5vw,82px);font-weight:800;font-variant-numeric:tabular-nums}
+.unit{font-size:23px;font-weight:700;letter-spacing:0}
+.bonus-note{font-size:15px;font-weight:700;margin-top:9px}
+.bonus-amount .metric-label br{display:none}
+.broken-link{display:flex;align-items:center;justify-content:center;gap:4px;color:#9ba9b2}
+.broken-link span{display:block;height:2px;background:currentColor;flex:1}
+.broken-link b{font-size:30px;font-weight:400;line-height:1}
+.shock{text-align:center;margin-top:28px;padding-top:28px;border-top:1px solid #dfc3b6}
+.shock-text{font-size:27px;font-weight:800;line-height:1.65;color:#8c3a27;text-wrap:balance}
+.shock .support{margin-top:14px}
+.decision{margin-top:50px;padding:38px 35px 34px;background:var(--gold-soft);border:1px solid #dec5a0;border-radius:var(--radius);text-align:center;color:var(--gold);position:relative}
+.decision:before{content:"";display:block;position:absolute;top:-51px;height:50px;left:50%;border-left:1px solid #c0b19e}
+.decision .phase{margin-bottom:18px}
+.decision h2{font-size:clamp(26px,3.5vw,44px);margin-bottom:25px;letter-spacing:0}
+.return-flow{display:flex;align-items:center;justify-content:center;gap:16px;margin:20px 0}
+.return-flow>div{background:#fffaf2;border:1px solid #ddcdb5;border-radius:12px;padding:13px 20px;font-size:17px;font-weight:700}
+.return-flow .return-self{background:#8b511e;border-color:#8b511e;color:#fff}
+.return-flow .arrow{color:var(--gold)}
+.decision .support{color:#755433;font-size:14px}
+.after-story .section-phase{color:var(--teal);margin-top:50px}
+.after-story .section-phase:before{box-shadow:0 0 0 6px #dbebe4}
+.after-story h2{color:#1b5048}
+.compare-board{display:grid;grid-template-columns:1fr 1fr;border:1px solid #bdcfc8;border-radius:20px;overflow:hidden}
+.compare-head{text-align:center;padding:16px 24px}
+.compare-head h3{font-size:22px}
+.company-head{background:#e7edf2;color:#4b6174}
+.business-head{background:#d8ebe2;color:var(--teal)}
+.compare-cell{padding:25px 30px;background:#fff;text-align:center;border-top:1px solid #d5e0dc}
+.company-cell{border-right:1px solid #d5e0dc;background:#f9fafb}
+.business-cell{background:#f5fbf7}
+.compare-time{font-size:28px;letter-spacing:0}
+.hour-blocks{display:flex;align-items:center;justify-content:flex-start;gap:4px;margin:16px auto 9px;width:100%;max-width:340px;min-height:22px}
+.hour-blocks i{display:block;width:calc((100% - 50px)/8);height:20px;border-radius:3px;background:#8093a4}
+.hour-blocks b{font-weight:400;line-height:1;color:var(--before);font-size:20px}
+.hour-blocks.short i{background:#338774}
+.time-caption{font-size:14px;color:var(--muted)}
+.income-cell{padding-top:20px;padding-bottom:24px}
+.income{display:flex;align-items:baseline;justify-content:center;gap:6px;line-height:1.4;margin-top:6px;letter-spacing:-.02em}
+.income strong{font-size:60px}
+.income span{font-size:21px;font-weight:700}
+.business-cell .income{color:var(--teal)}
+.green{background:var(--teal-soft);color:var(--teal)}
+.green .statement-text{font-size:24px}
+.switch-path{display:flex;align-items:center;justify-content:center;gap:25px;margin:-3px 0 30px}
+.switch-path>div{padding:12px 26px;border:1px solid #c0d6cb;border-radius:40px;background:#fff;font-size:17px}
+.switch-path .arrow{color:var(--teal)}
+.growth-board{display:grid;grid-template-columns:1fr 1fr 1.2fr;align-items:center;background:#e9f3ed;border:1px solid #bad6c5;border-radius:var(--radius);padding:36px 25px;gap:24px}
+.growth-start,.growth-finish{text-align:center}
+.growth-start{color:#496557}
+.growth-finish{color:#14674e;background:#fff;border:1px solid #bfd8c9;border-radius:20px;padding:25px 14px 22px;box-shadow:0 5px 0 #bdd5c744}
+.growth-number{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:center;line-height:1.3;gap:4px;margin:8px 0;font-variant-numeric:tabular-nums;letter-spacing:-.025em}
+.growth-kind{width:100%;font-size:17px;letter-spacing:.035em;font-weight:700}
+.growth-number strong{font-size:67px}
+.growth-start .growth-number strong{font-size:53px}
+.growth-unit{font-size:21px;font-weight:700;letter-spacing:0}
+.growth-bridge{text-align:center;color:var(--teal)}
+.milestone-line{display:flex;align-items:center;margin-bottom:18px}
+.milestone-line i{width:12px;height:12px;border:2px solid #39836c;border-radius:50%;background:#e9f3ed}
+.milestone-line span{height:2px;flex:1;background:#84af98}
+.milestone-time{font-size:18px;font-weight:800;line-height:1.7}
+.growth-bridge .support{font-size:14px;margin-top:10px}
+.achieved{font-size:14px;font-weight:700;margin-top:13px}
+.change-table{border:1px solid #cbdad3;border-radius:20px;background:#fff;overflow:hidden}
+.change-table-head{display:grid;grid-template-columns:1fr 1fr;background:linear-gradient(90deg,#edf1f5 50%,#e3f1e9 50%);padding:16px 25px;text-align:center;font-size:15px;font-weight:800;letter-spacing:.08em}
+.change-table-head span:first-child{color:var(--before)}
+.change-table-head span:last-child{color:var(--teal)}
+.change-row{display:grid;grid-template-columns:1fr 35px 1fr;align-items:center;gap:20px;padding:21px 25px;border-top:1px solid #e0e7e3;font-size:17px;line-height:1.75}
+.change-row>div:first-child{color:#556778}
+.change-row>div:last-child{font-weight:700;color:var(--teal)}
+.change-row .arrow{color:#78a08d;font-size:23px}
+.stress-free{text-align:center;padding:25px 0 0;color:var(--teal);font-size:24px;font-weight:800}
+.place-map{padding-top:3px}
+.place-hub{width:200px;margin:auto;text-align:center;background:#1b6d5c;border-radius:50px;padding:15px 25px;color:#fff;font-size:27px;letter-spacing:0;position:relative;z-index:1}
+.place-spokes{height:49px;position:relative;width:67%;margin:auto;display:flex;justify-content:space-between;border-top:1px solid #82ad99;top:24px}
+.place-spokes:before{content:"";position:absolute;height:24px;border-left:1px solid #82ad99;left:50%;top:-24px}
+.place-spokes i{display:block;height:25px;border-left:1px solid #82ad99}
+.place-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:0}
+.place-card{background:white;border:1px solid #bed5c9;border-radius:18px;padding:26px 22px;position:relative}
+.place-card:before{content:"";position:absolute;height:8px;width:8px;background:#377f66;border-radius:50%;left:50%;top:-4px;transform:translateX(-50%)}
+.place-card h3{color:var(--teal);font-size:23px;margin-bottom:13px}
+.place-card .support{font-size:15px}
+.card-chips{display:flex;flex-wrap:wrap;gap:7px;padding-top:19px}
+.chip{display:inline-block;background:#eaf4ee;border:1px solid #d3e4d9;border-radius:5px;color:#35694f;font-size:13px;padding:3px 8px;line-height:1.7}
+.work-anywhere>.support{margin-top:25px;text-align:center}
+.resource-hub{background:var(--teal-soft);border:1px solid #b7d5c4;border-radius:14px;text-align:center;font-size:23px;color:var(--teal);font-weight:800;width:230px;max-width:100%;margin:auto;padding:16px}
+.resource-branches{position:relative;width:50%;margin:24px auto 0;height:26px;border-top:1px solid #84b39d;border-left:1px solid #84b39d;border-right:1px solid #84b39d}
+.resource-branches:before{content:"";position:absolute;left:50%;height:24px;top:-25px;border-left:1px solid #84b39d}
+.relationship-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.relationship-card{border:1px solid #ceddcf;background:#fff;border-radius:18px;overflow:hidden}
+.relationship-label{padding:18px 24px;border-bottom:1px solid #d7e4d9;background:#edf4ed}
+.relationship-label h3{font-size:22px;color:#35684e}
+.parent .relationship-label{background:#f8efe1}
+.parent .relationship-label h3{color:#826237}
+.relationship-body{padding:24px;font-size:19px;font-weight:700;line-height:1.8;display:flex;flex-direction:column;gap:14px}
+.parent .relationship-body>div{display:flex;align-items:center;gap:20px}
+.parent .relationship-body strong{font-size:24px;min-width:52px;color:#735b3e}
+.parent .relationship-body span{font-size:16px;font-weight:500}
+.relationships>.support{margin-top:24px;text-align:center}
+.effort{border-bottom:0;padding-bottom:30px}
+.effort-before{border:1px solid #d2dce3;background:#edf1f5;border-radius:18px;padding:25px 30px;color:#53677a;margin-bottom:20px}
+.effort-before-flow{display:grid;grid-template-columns:1fr 35px 1.5fr;gap:20px;align-items:center;font-weight:700;font-size:20px;margin-top:16px}
+.effort-before-flow .support{font-size:14px;font-weight:400;margin-top:5px}
+.effort-after{border:1px solid #b9d6c7;background:#e5f2e9;border-radius:18px;padding:25px 30px;color:var(--teal)}
+.effort-after-flow{display:flex;align-items:center;justify-content:space-between;gap:18px;margin-top:16px;font-size:20px;font-weight:800}
+.effort-after-flow>div{flex:1;text-align:center;border:1px solid #c2dacb;background:#fff;border-radius:12px;padding:18px 12px}
+.effort-after-flow .arrow{color:#4d8e76}
+.finale{text-align:center;padding:54px 16px 32px}
+.finale-pre{font-size:17px;color:var(--teal);margin-bottom:24px}
+.finale-quote{font-size:clamp(30px,4vw,49px);font-weight:800;color:#175f4c;line-height:1.6;letter-spacing:.035em;text-wrap:balance}
+.finale-last{font-size:16px;color:var(--muted);margin-top:23px}
+footer{border-top:1px solid var(--line);padding:28px 0 40px;display:flex;justify-content:space-between;gap:20px;font-size:12px;color:var(--muted);align-items:center}
+footer a{white-space:nowrap}
+
+@media(min-width:1200px){.chapter{padding-top:54px;padding-bottom:66px}.cover{padding-top:80px}.university-layout{gap:52px}}
+@media(max-width:950px){main{padding:0 34px}.overview-card{padding:25px 23px}.overview-quote{font-size:24px}.university-layout{gap:24px;grid-template-columns:1.2fr 1fr}.loop{min-height:340px}.loop-node{min-width:122px;padding:12px 10px;font-size:14px}.loop-node strong{font-size:16px}.loop-track{inset:49px 42px}.la1,.la2{right:48px}.la3,.la4{left:48px}.large-note{font-size:20px}.cause-flow{gap:10px}.cause-cell{padding:20px 14px}.cause-word{font-size:18px}.pain-grid>div{padding:0 15px}.time{font-size:28px}.day-range{gap:20px;padding:28px}.success-strip{flex-wrap:wrap;gap:15px}.joy{margin-left:0}.growth-board{grid-template-columns:1fr 1fr 1.2fr;padding:25px 18px;gap:17px}.growth-number strong{font-size:58px}.growth-unit{font-size:18px}.place-grid{gap:14px}.place-card{padding:22px 17px}.place-card h3{font-size:20px}.change-row{font-size:16px}.return-flow>div{padding:12px 17px;font-size:16px}}
+@media(max-width:700px){
+ .chapter h2 br,.shock-text br{display:none}
+ .university h2{font-size:clamp(22px,6.7vw,27px)}
+ .university h2 br{display:initial}
+ .bonus-amount .metric-label br{display:initial}
+ body{font-size:15px}main{padding:0 22px}h1{font-size:29px;line-height:1.65}h2{font-size:27px;line-height:1.65}.cover{padding:39px 0 36px}.cover h1{padding-left:17px;margin-bottom:27px}.overview{grid-template-columns:1fr;gap:14px}.overview-card{min-height:0;padding:23px 25px}.overview-quote{font-size:25px;margin-top:13px;line-height:1.6}.overview-tail{padding-top:13px;margin-top:17px;font-size:13px}.overview-arrow{transform:rotate(90deg);justify-self:center;font-size:27px}.phase{font-size:13px}.section-phase{margin-top:34px;font-size:16px}.chapter{padding:32px 0 40px}.chapter h2{margin-bottom:25px}.university-layout{grid-template-columns:1fr;gap:20px}.loop{max-width:430px;margin:auto;min-height:320px}.loop-track{inset:45px 48px}.loop-node{min-width:128px}.la1{top:60px;right:54px}.la2{bottom:57px;right:54px}.la3{bottom:57px;left:54px}.la4{top:60px;left:54px}.university-note{border-left:3px solid #becbd6;padding-left:19px}.large-note{font-size:21px;margin-bottom:10px}.support{font-size:14px}.cause-flow{grid-template-columns:1fr;gap:10px}.cause-cell{padding:19px 20px;border-top:0;border-left:4px solid #9caebc;border-radius:0 12px 12px 0}.cause-word{font-size:21px;margin-bottom:8px}.cause-flow>.arrow{transform:rotate(90deg);font-size:24px;justify-self:center}.statement{padding:23px 20px;margin-top:22px}.statement-text{font-size:24px}.day-range{gap:12px;padding:22px 18px}.time{font-size:24px}.time-label{font-size:12px}.day-line{gap:3px;height:16px}.pain-grid{grid-template-columns:1fr;padding:0}.pain-grid>div{padding:21px 22px;border-right:0;border-bottom:1px solid #dce3e9}.pain-grid>div:last-child{border-bottom:0}.pain-grid h3{font-size:19px;margin-bottom:7px}.isolation{grid-template-columns:1fr;gap:17px;margin:26px 0}.pair-dots{margin-bottom:9px;height:37px}.isolation-middle .arrow{transform:rotate(90deg);margin-top:12px;font-size:28px}.solo-dot{margin-bottom:10px}.strong-label{font-size:18px}.success-strip{display:grid;grid-template-columns:1fr;text-align:center;padding:21px;gap:12px}.success-strip .arrow{transform:rotate(90deg);font-size:24px}.success-strip .joy{margin:0}.anticipation{font-size:17px;margin:27px 0 19px}.contract-result{grid-template-columns:1fr 25px 1fr;gap:7px}.contract-amount,.bonus-amount{padding:22px 8px;border-radius:15px}.metric-label{font-size:13px;letter-spacing:.02em}.big-number{flex-wrap:wrap;gap:0;margin-top:11px}.digits{font-size:44px;width:100%;letter-spacing:-.045em}.unit{font-size:19px}.bonus-note{font-size:13px;margin-top:8px}.broken-link span{display:none}.broken-link b{font-size:25px}.shock{padding-top:23px;margin-top:23px}.shock-text{font-size:24px}.decision{margin-top:38px;padding:28px 20px 27px}.decision:before{top:-39px;height:38px}.decision h2{font-size:29px;line-height:1.7;margin-bottom:21px}.return-flow{flex-direction:column;gap:10px}.return-flow>div{width:100%;max-width:330px;padding:12px 17px;font-size:18px}.return-flow>.arrow{transform:rotate(90deg);font-size:23px}.decision .support{font-size:13px}.after-story .section-phase{margin-top:37px}.compare-head{padding:14px 10px}.compare-head h3{font-size:20px}.compare-cell{padding:23px 14px}.compare-time{font-size:20px;line-height:1.7}.hour-blocks{gap:3px;margin:15px auto 10px}.hour-blocks i{width:calc((100% - 33px)/8);height:18px;border-radius:2px}.hour-blocks b{font-size:16px}.income strong{font-size:48px}.income span{font-size:16px}.income{flex-wrap:wrap;gap:2px}.income-cell{padding-top:18px;padding-bottom:23px}.green .statement-text{font-size:23px}.switch-path{gap:13px;margin:0 0 23px}.switch-path>div{padding:11px 19px;font-size:16px}.switch-path .strong-label{font-size:17px}.growth-board{grid-template-columns:1fr;gap:20px;padding:26px 22px}.growth-number{gap:5px}.growth-kind{width:auto;font-size:17px;align-self:center;margin-right:4px}.growth-start .growth-number strong{font-size:47px}.growth-number strong{font-size:72px}.growth-unit{font-size:21px}.growth-bridge{padding:5px 0;display:flex;flex-direction:column;align-items:center}.milestone-line{width:1px;height:30px;flex-direction:column;gap:0;margin-bottom:12px}.milestone-line span{width:1px;height:auto;min-height:17px}.milestone-line i{width:8px;height:8px;min-height:8px;border-width:1px}.milestone-time{font-size:20px}.growth-bridge .support{font-size:14px;margin-top:7px}.growth-finish{padding:24px 15px}.growth-finish .growth-kind{width:100%;margin:0}.achieved{font-size:14px}.change-table-head{font-size:13px;padding:14px}.change-row{grid-template-columns:1fr 18px 1fr;gap:11px;padding:18px 15px;font-size:14px}.change-row .arrow{font-size:20px}.stress-free{font-size:23px;line-height:1.7;padding-top:22px}.place-hub{font-size:25px;width:180px}.place-spokes{display:none}.place-grid{grid-template-columns:1fr;gap:0;margin:0 0 0 24px;padding-left:24px;border-left:1px solid #83ad99;position:relative;padding-top:25px}.place-card{margin-bottom:19px;padding:23px;position:relative}.place-card:before{left:-25px;top:27px}.place-card:after{content:"";position:absolute;width:24px;border-top:1px solid #83ad99;left:-25px;top:30px}.place-card h3{font-size:22px}.place-card .support{font-size:15px}.place-card:last-child{margin-bottom:0}.card-chips{padding-top:15px}.chip{font-size:13px}.work-anywhere>.support{text-align:left;margin-top:23px}.resource-hub{font-size:23px;width:210px}.resource-branches{display:none}.relationship-grid{grid-template-columns:1fr;gap:19px;margin-top:24px}.relationship-label{padding:17px 22px}.relationship-body{padding:22px;font-size:18px;gap:12px}.parent .relationship-body{flex-direction:row;justify-content:space-between;gap:15px}.parent .relationship-body>div{flex-direction:column;gap:7px;align-items:flex-start;flex:1}.parent .relationship-body strong{font-size:23px}.relationships>.support{text-align:left}.effort-before,.effort-after{padding:23px 21px}.effort-before-flow{grid-template-columns:1fr;gap:13px;font-size:19px;text-align:center}.effort-before-flow>.arrow{transform:rotate(90deg);font-size:24px}.effort-before-flow .support{font-size:13px;margin-top:8px}.effort-after-flow{flex-direction:column;gap:10px;font-size:19px}.effort-after-flow>div{width:100%;padding:14px}.effort-after-flow>.arrow{transform:rotate(90deg);font-size:24px}.finale{padding:41px 0 25px}.finale-pre{font-size:15px;margin-bottom:19px}.finale-quote{font-size:32px;line-height:1.7}.finale-last{font-size:14px;margin-top:20px}.effort{padding-bottom:10px}footer{flex-direction:column;align-items:flex-start;font-size:11px;gap:11px;padding:24px 0 30px}
+}
+@media(max-width:370px){main{padding:0 16px}h1{font-size:26px}h2{font-size:25px}.loop-node{min-width:120px;padding:10px 8px}.loop{min-height:305px}.loop-center{font-size:13px}.loop-track{inset:42px 42px}.la1,.la2{right:45px}.la3,.la4{left:45px}.overview-quote{font-size:23px}.time{font-size:21px}.day-range{gap:9px;padding:20px 14px}.digits{font-size:39px}.contract-result{gap:5px;grid-template-columns:1fr 20px 1fr}.metric-label{font-size:12px}.decision h2{font-size:27px}.compare-time{font-size:18px}.compare-cell{padding:20px 10px}.income strong{font-size:43px}.income span{font-size:15px}.change-row{padding:16px 12px;gap:8px;font-size:13px}.finale-quote{font-size:29px}.growth-number strong{font-size:65px}}
+/* 狭い画面では、中央の文字と左右のノードが重ならない配置へ切り替える。 */
+@media(min-width:701px) and (max-width:800px){.university-layout{grid-template-columns:1fr}.loop{max-width:450px;margin:auto}.university-note{border-left:3px solid #becbd6;padding-left:19px}}
+@media(max-width:700px){
+ .loop{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);grid-template-rows:auto 66px auto;column-gap:30px;min-height:0;padding:10px 0;align-items:center}
+ .loop-node{position:relative;transform:none;inset:auto;min-width:0;width:100%;padding:17px 10px;min-height:80px;display:flex;flex-direction:column;justify-content:center}
+ .node-top{grid-column:1;grid-row:1}.node-right{grid-column:2;grid-row:1}.node-bottom{grid-column:2;grid-row:3}.node-left{grid-column:1;grid-row:3}
+ .loop-track{inset:45px 20px;border-radius:40px}
+ .loop-center{position:relative;transform:none;inset:auto;grid-row:2;grid-column:1 / -1;justify-self:center;background:var(--paper);padding:5px 12px;z-index:1;font-size:14px}
+ .loop-arrow{font-size:22px;z-index:2}.la1{right:calc(50% - 11px);top:33px;transform:rotate(-45deg)}.la2{right:10px;top:calc(50% - 11px);bottom:auto;transform:rotate(-45deg)}.la3{left:calc(50% - 11px);bottom:32px;transform:rotate(-45deg)}.la4{left:10px;top:calc(50% - 11px);transform:rotate(-45deg)}
+}
+@media print{
+ .chapter,.cover{break-inside:avoid}
+ .section-phase{break-after:avoid}
+ .decision:before{display:none}
+ @page{size:A4;margin:14mm}
+ html{background:#fff;font-size:10pt;-webkit-print-color-adjust:exact;print-color-adjust:exact}body{font-size:10pt}main{max-width:none;padding:0}h1{font-size:22pt}h2{font-size:19pt}.cover{padding:15px 0 30px}.cover h1{margin-bottom:24px}.overview{grid-template-columns:1fr 24px 1fr}.overview-card{min-height:200px;padding:20px}.overview-quote{font-size:18pt}.chapter{padding:30px 0 35px}.chapter h2{margin-bottom:23px}.section-phase{margin-top:25px}.decision{margin-top:35px;padding:25px}.decision h2{font-size:25pt}.loop{min-height:290px}.university-layout{gap:25px}.large-note{font-size:16pt}.cause-word{font-size:13pt}.support{font-size:10pt}.statement-text{font-size:18pt}.metric-label{font-size:10pt}.digits{font-size:48pt}.compare-time{font-size:18pt}.growth-number strong{font-size:44pt}.place-card h3{font-size:15pt}.place-card{padding:18px 14px}.change-row{font-size:11pt}.finale-quote{font-size:29pt}.finale{padding:35px 10px 25px}footer{padding:20px 0;font-size:8pt}.overview-card,.cause-cell,.day-board,.isolation,.statement,.success-strip,.contract-result,.shock,.decision,.compare-board,.growth-board,.change-row,.place-map,.relationship-flow,.effort-before,.effort-after,.finale{break-inside:avoid}h2{break-after:avoid}footer a[href]:after{content:none}
+}
+</style></head>
+<body><main>
+<header class="cover">
+<h1>的場物販before after ストーリー図解</h1>
+<div class="overview">
+<div class="overview-card before"><p class="phase">ビフォー</p><p data-source="B5" class="overview-quote">泣きそうになりながら<br>会社へ向かっていた</p><div class="overview-tail"><span data-source="B3">毎日の生活が苦痛だった</span></div></div>
+<span class="arrow overview-arrow" aria-hidden="true">→</span>
+<div class="overview-card after"><p class="phase">アフター</p><p data-source="A11" class="overview-quote">仕事そのものが<br>ものすごく楽しい</p><div class="overview-tail"><span data-source="A11">頑張る意味を実感できるようになった</span></div></div>
+</div>
+</header>
+
+<div class="story before-story"><p class="section-phase">ビフォー</p>
+<section class="chapter university">
+<div class="chapter-heading"><h2 data-source="B1">大学時代は目標もなく、<br>自堕落な生活を送っていた</h2></div>
+<div class="university-layout">
+<div class="loop" role="group" aria-label="大学時代に繰り返していた生活">
+<div class="loop-track" aria-hidden="true"></div>
+<div class="loop-center"><span data-source="B1">繰り返していた</span></div>
+<div class="loop-node node-top"><span data-source="B1">昼過ぎに起きて</span></div>
+<div class="loop-node node-right"><span data-source="B1">またゲーム</span></div>
+<div class="loop-node node-bottom"><span data-source="B1">夜中まで</span><strong><span data-source="B1">「荒野行動」</span></strong></div>
+<div class="loop-node node-left"><span data-source="B1">授業をサボって</span><strong><span data-source="B1">ボウリング</span></strong></div>
+<span class="loop-arrow la1" aria-hidden="true">↘</span><span class="loop-arrow la2" aria-hidden="true">↙</span><span class="loop-arrow la3" aria-hidden="true">↖</span><span class="loop-arrow la4" aria-hidden="true">↗</span>
+</div>
+<div class="university-note"><p data-source="B1" class="large-note">Fラン大学に入ってから<br>特にやることもなく</p><p data-source="B1" class="support">友達とボウリングに行ったり、夜中までスマホゲームの「荒野行動」をしたりする毎日。</p></div>
+</div>
+</section>
+
+<section class="chapter corona">
+<h2 data-source="B2">コロナをきっかけに、<br>就職そのものに希望を持てなくなった</h2>
+<div class="cause-flow">
+<div class="cause-cell"><p data-source="B2" class="cause-word">コロナ</p><p data-source="B2" class="support">コロナを機に</p></div><span class="arrow " aria-hidden="true">→</span>
+<div class="cause-cell"><p data-source="B2" class="cause-word">企業が潰れていく</p><p data-source="B2" class="support">どんどん企業が潰れていく姿を目の当たりにした。</p></div><span class="arrow " aria-hidden="true">→</span>
+<div class="cause-cell"><p data-source="B2" class="cause-word">いつ何が起こるか<br>わからない</p><p data-source="B2" class="support">どれだけ就活を頑張って会社に入ったとしても</p></div>
+</div>
+<div class="statement pale"><p data-source="B2" class="statement-text">「会社に入れば安心」<br>という感覚を持てず</p></div>
+</section>
+
+<section class="chapter company">
+<h2 data-source="B3">実際に会社員になっても、<br>毎日の生活が苦痛だった</h2>
+<div class="day-board">
+<div class="day-range"><div class="time-point"><strong data-source="B5" class="time">朝8時頃</strong><span data-source="B5" class="time-label">出勤</span></div><div class="day-line" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="time-point end"><strong data-source="B5" class="time">20時過ぎ</strong><span data-source="B5" class="time-label">仕事が終わる</span></div></div>
+<div class="pain-grid">
+<div><h3 data-source="B3">満員電車</h3><p data-source="B3" class="support">人に押しつぶされながら電車に揺られて出勤する日々。</p></div>
+<div><h3 data-source="B3">着心地の悪いスーツ</h3><p data-source="B3" class="support">毎日着心地の悪いスーツを着て</p></div>
+<div><h3 data-source="B3">上司との相性も悪く</h3><p data-source="B3" class="support">理不尽に怒られたり、面倒な仕事を振られたりすることも多かった。</p></div>
+</div></div>
+<div class="isolation">
+<div class="isolation-start"><div class="pair-dots" aria-hidden="true"><i></i><i></i></div><p data-source="B4" class="strong-label">唯一仲の良かった先輩</p></div>
+<div class="isolation-middle"><p data-source="B4">入社して3ヶ月ほどで<br>転職していった</p><span class="arrow " aria-hidden="true">→</span></div>
+<div class="isolation-end"><div class="solo-dot" aria-hidden="true"><i></i></div><p data-source="B4" class="strong-label">完全にひとりぼっち</p><p data-source="B4" class="support">話せる人もいなくなり</p></div>
+</div>
+<div class="statement sorrow"><p data-source="B5" class="statement-text">泣きそうになりながら<br>会社へ向かっていた</p><p data-source="B5" class="support">あまりにも苦しくて、実際に泣いた日もあった。</p></div>
+</section>
+
+<section class="chapter contract">
+<h2 data-source="B6">同期の中で一番最初に<br>契約を取ることができた</h2>
+<div class="success-strip"><div><p data-source="B6">学生の頃から物販や<br>ビジネスを経験していた</p></div><span class="arrow " aria-hidden="true">→</span><div><p data-source="B6" class="strong-label">同期の中で一番最初に契約</p></div><div class="joy"><span data-source="B6">これは本当に嬉しかった。</span></div></div>
+<div class="anticipation"><p data-source="B7">これだけ大きな契約を取ったら、<br>ボーナスはいくらもらえるんだろう</p></div>
+<div class="contract-result">
+<div class="contract-amount"><p data-source="B7" class="metric-label">家を契約</p><p class="big-number"><span data-source="B7" class="digits">4,000</span><span data-source="B7" class="unit">万円</span></p></div>
+<div class="broken-link" aria-hidden="true"><span></span><b>→</b><span></span></div>
+<div class="bonus-amount"><p data-source="B8" class="metric-label">実際にもらった<br>ボーナス</p><p class="big-number"><span data-source="B8" class="digits">8</span><span data-source="B8" class="unit">万円</span></p><p data-source="B8" class="bonus-note">たった8万円だった</p></div>
+</div>
+<div class="shock"><p data-source="B8" class="shock-text">これだけ結果を出しても、<br>成果がほとんど収入に反映されない</p><p data-source="B8" class="support">本当にびっくりしたし、開いた口が塞がらなかった。</p></div>
+</section>
+</div>
+
+<section class="decision chapter">
+<p class="phase"><span data-source="B9">その瞬間</span></p>
+<h2 data-source="B9" class="decision-quote">「もう物販で食っていこう」</h2>
+<div class="return-flow"><div><p data-source="B9">自分が頑張って</p></div><span class="arrow " aria-hidden="true">→</span><div><p data-source="B9">利益を出した分</p></div><span class="arrow " aria-hidden="true">→</span><div class="return-self"><p data-source="B9">自分に返ってくる</p></div></div>
+<p data-source="B9" class="support">学生時代から物販をかじっていたからこそ、余計に衝撃だった。</p>
+</section>
+
+<div class="story after-story"><p class="section-phase">アフター</p>
+<section class="chapter side-business">
+<h2 data-source="A1">会社員をしながら<br>副業で物販を続けていて</h2>
+<div class="compare-board">
+<div class="compare-head company-head"><h3 data-source="A1">会社員</h3></div><div class="compare-head business-head"><h3 data-source="A1">物販</h3></div>
+<div class="compare-cell company-cell"><p class="compare-time"><strong data-source="A1">1日8時間以上</strong></p><div class="hour-blocks long" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><b>＋</b></div><p data-source="A1" class="time-caption">働いて</p></div>
+<div class="compare-cell business-cell"><p class="compare-time"><strong data-source="A1">1日2時間ほど</strong></p><div class="hour-blocks short" aria-hidden="true"><i></i><i></i></div><p data-source="A1" class="time-caption">作業</p></div>
+<div class="compare-cell company-cell income-cell"><p data-source="A1" class="metric-label">手取り</p><p class="income"><strong data-source="A1">17</strong><span data-source="A1">万円</span></p></div>
+<div class="compare-cell business-cell income-cell"><p data-source="A1" class="metric-label">月利</p><p class="income"><strong data-source="A1">20</strong><span data-source="A1">万円ほど</span></p></div>
+</div>
+<div class="statement green"><p data-source="A1" class="statement-text">当時すでに1日2時間ほどの作業で<br>本業以上の利益が出ていた</p></div>
+</section>
+
+<section class="chapter growth">
+<h2 data-source="A2">「頑張った分だけ結果が返ってくる世界」<br>を選んで脱サラした</h2>
+<div class="switch-path"><div><p data-source="A2">会社を辞めて</p></div><span class="arrow " aria-hidden="true">→</span><div><p data-source="A2" class="strong-label">物販に集中</p></div></div>
+<div class="growth-board">
+<div class="growth-start"><p data-source="A3" class="metric-label">副業</p><p class="growth-number"><span data-source="A1" class="growth-kind">月利</span><strong data-source="A1">20</strong><span data-source="A1" class="growth-unit">万円ほど</span></p></div>
+<div class="growth-bridge"><div class="milestone-line" aria-hidden="true"><i></i><span></span><i></i></div><p data-source="A3" class="milestone-time">脱サラしてから3ヶ月</p><p data-source="A3" class="support">物販に本格的に時間を使えるようになり</p></div>
+<div class="growth-finish"><p data-source="A3" class="metric-label">物販一本</p><p class="growth-number"><span class="growth-kind"><span data-source="A3">月利</span></span><strong data-source="A3">100</strong><span data-source="A3" class="growth-unit">万円</span></p><p data-source="A3" class="achieved">達成することができた</p></div>
+</div>
+</section>
+
+<section class="chapter life-change">
+<h2 data-source="A4">時間にも場所にも<br>縛られない生活になった</h2>
+<div class="change-table">
+<div class="change-table-head"><span>ビフォー</span><span>アフター</span></div>
+<div class="change-row"><div><span data-source="B3">毎日着心地の悪いスーツを着て</span></div><span class="arrow " aria-hidden="true">→</span><div><span data-source="A4">毎日スーツを着る必要もなく</span></div></div>
+<div class="change-row"><div><span data-source="B5">毎日朝8時頃に出勤</span></div><span class="arrow " aria-hidden="true">→</span><div><span data-source="A4">朝起きる時間を気にする必要もない</span></div></div>
+<div class="change-row"><div><span data-source="B3">人に押しつぶされながら</span></div><span class="arrow " aria-hidden="true">→</span><div><span data-source="A4">満員電車にも乗らなくていい</span></div></div>
+<div class="change-row"><div><span data-source="B3">理不尽に怒られたり</span></div><span class="arrow " aria-hidden="true">→</span><div><span data-source="A4">理不尽に怒られることもなくなった</span></div></div>
+<div class="change-row"><div><span data-source="B4">会社の中で完全にひとりぼっち</span></div><span class="arrow " aria-hidden="true">→</span><div><span data-source="A4">好きな人や仲間と一緒に仕事</span></div></div>
+</div>
+<div class="stress-free"><p data-source="A4">本当にストレスフリーになった</p></div>
+</section>
+
+<section class="chapter work-anywhere">
+<h2 data-source="A5">自分で好きな場所を選びながら<br>仕事ができるようになった</h2>
+<div class="place-map">
+<div class="place-hub"><strong data-source="A5">PC1つ</strong></div>
+<div class="place-spokes" aria-hidden="true"><i></i><i></i><i></i></div>
+<div class="place-grid">
+<article class="place-card cafe"><h3 data-source="A5">カフェ巡り</h3><p data-source="A5" class="support">いろいろなカフェへ行きながら仕事をしている。</p><div class="card-chips"><span data-source="A5" class="chip">PC1つを片手に</span></div></article>
+<article class="place-card trip"><h3 data-source="A6">全国を旅行</h3><p data-source="A6" class="support">スクールのオフ会が毎月どこかしらで開催される</p><div class="card-chips"><span data-source="A6" class="chip">ご当地グルメ</span><span data-source="A6" class="chip">最高の仲間</span></div></article>
+<article class="place-card vacation"><h3 data-source="A7">ワーケーション</h3><p data-source="A7" class="support">良い宿に泊まりながら仕事をすることもある。</p><div class="card-chips"><span data-source="A7" class="chip">箱根</span><span data-source="A7" class="chip">熱海</span><span data-source="A7" class="chip">仕事仲間</span></div></article>
+</div></div>
+<p data-source="A7" class="support">好きな場所へ行きながら働けることも、今の日々の大きな幸せになっている。</p>
+</section>
+
+<section class="chapter relationships">
+<h2 data-source="A8">お金にも余裕ができ、<br>できることが増えた</h2>
+<div class="relationship-flow"><div class="resource-hub"><p data-source="A9">お金や時間</p></div><div class="resource-branches" aria-hidden="true"></div>
+<div class="relationship-grid">
+<article class="relationship-card"><div class="relationship-label"><h3 data-source="A8">彼女</h3></div><div class="relationship-body"><p data-source="A8">良いご飯屋さんへ行ったり</p><p data-source="A8">一緒に旅行へ行ったり</p></div></article>
+<article class="relationship-card parent"><div class="relationship-label"><h3 data-source="A9">親孝行</h3></div><div class="relationship-body"><div><strong data-source="A9">鎌倉</strong><span data-source="A9">食べ歩き</span></div><div><strong data-source="A9">横浜</strong><span data-source="A9">案内</span></div></div></article>
+</div></div>
+<p data-source="A9" class="support">自分のためだけではなく、親にもお金や時間を使えるようになった。</p>
+</section>
+
+<section class="chapter effort">
+<h2 data-source="A10">努力した分だけ、<br>結果として返ってくるようになった</h2>
+<div class="effort-before"><p class="phase">ビフォー</p><div class="effort-before-flow"><p data-source="A10">どれだけ頑張っても</p><span class="arrow " aria-hidden="true">→</span><div><p data-source="A10">収入や環境が大きく変わらず</p><p data-source="A10" class="support">なかなかやる気を持てなかった</p></div></div></div>
+<div class="effort-after"><p class="phase">アフター</p><div class="effort-after-flow"><div><p data-source="A11">自分がやった分</p></div><span class="arrow " aria-hidden="true">→</span><div><p data-source="A11">結果が変わり</p></div><span class="arrow " aria-hidden="true">→</span><div><p data-source="A11">自分に返ってくる</p></div></div></div>
+<div class="finale"><p data-source="A11" class="finale-pre">頑張る意味を実感できるようになった</p><p data-source="A11" class="finale-quote">仕事そのものが<br>ものすごく楽しい</p><p data-source="A11" class="finale-last">今でも飽きずに続けられている</p></div>
+</section>
+</div>
+<footer><span>的場物販before after ストーリー図解</span><a download="送付台本.txt" href="data:text/plain;charset=utf-8;base64,55qE5aC054mp6LKpYmVmb3JlIGFmdGVyIOOCueODiOODvOODquODvOWbs+inowoKIyMg44OT44OV44Kp44O8CgrlpKflrabmmYLku6Pjga/nm67mqJnjgoLjgarjgY/jgIHoh6rloJXokL3jgarnlJ/mtLvjgpLpgIHjgaPjgabjgYTjgZ8KRuODqeODs+Wkp+WtpuOBq+WFpeOBo+OBpuOBi+OCieeJueOBq+OChOOCi+OBk+OBqOOCguOBquOBj+OAgeaOiOalreOCkuOCteODnOOBo+OBpuWPi+mBlOOBqOODnOOCpuODquODs+OCsOOBq+ihjOOBo+OBn+OCiuOAgeWknOS4reOBvuOBp+OCueODnuODm+OCsuODvOODoOOBruOAjOiNkumHjuihjOWLleOAjeOCkuOBl+OBn+OCiuOBmeOCi+avjuaXpeOAguaYvOmBjuOBjuOBq+i1t+OBjeOBpuOAgeOBvuOBn+OCsuODvOODoOOCkuOBmeOCi+OCiOOBhuOBqueUn+a0u+OCkue5sOOCiui/lOOBl+OBpuOBhOOBn+OAggoK44Kz44Ot44OK44KS44GN44Gj44GL44GR44Gr44CB5bCx6IG344Gd44Gu44KC44Gu44Gr5biM5pyb44KS5oyB44Gm44Gq44GP44Gq44Gj44GfCuOCs+ODreODiuOCkuapn+OBq+OAgeOBqeOCk+OBqeOCk+S8gealreOBjOa9sOOCjOOBpuOBhOOBj+Wnv+OCkuebruOBruW9k+OBn+OCiuOBq+OBl+OBn+OAguOBqeOCjOOBoOOBkeWwsea0u+OCkumgkeW8teOBo+OBpuS8muekvuOBq+WFpeOBo+OBn+OBqOOBl+OBpuOCguOAgeOBhOOBpOS9leOBjOi1t+OBk+OCi+OBi+OCj+OBi+OCieOBquOBhOOAguOAjOS8muekvuOBq+WFpeOCjOOBsOWuieW/g+OAjeOBqOOBhOOBhuaEn+immuOCkuaMgeOBpuOBmuOAgeWwseiBt+OBneOBruOCguOBruOBq+W4jOacm+OCkuaEn+OBmOOCieOCjOOBquOBi+OBo+OBn+OAggoK5a6f6Zqb44Gr5Lya56S+5ZOh44Gr44Gq44Gj44Gm44KC44CB5q+O5pel44Gu55Sf5rS744GM6Ium55eb44Gg44Gj44GfCuS8muekvuWToeOBq+OBquOBo+OBpuOBv+OBn+OCguOBruOBruOAgeOBqOOBq+OBi+OBj+a6gOWToembu+i7iuOBjOiLpueXm+OBoOOBo+OBn+OAguavjuaXpeedgOW/g+WcsOOBruaCquOBhOOCueODvOODhOOCkuedgOOBpuOAgeS6uuOBq+aKvOOBl+OBpOOBtuOBleOCjOOBquOBjOOCiembu+i7iuOBq+aPuuOCieOCjOOBpuWHuuWLpOOBmeOCi+aXpeOAheOAguS4iuWPuOOBqOOBruebuOaAp+OCguaCquOBj+OAgeeQhuS4jeWwveOBq+aAkuOCieOCjOOBn+OCiuOAgemdouWAkuOBquS7leS6i+OCkuaMr+OCieOCjOOBn+OCiuOBmeOCi+OBk+OBqOOCguWkmuOBi+OBo+OBn+OAggoK5Luy44Gu6Imv44GL44Gj44Gf5YWI6Lyp44KC6L6e44KB44CB5Lya56S+44Gn5a6M5YWo44Gr44Gy44Go44KK44G844Gj44Gh44Gr44Gq44Gj44GfCuWUr+S4gOS7suOBruiJr+OBi+OBo+OBn+WFiOi8qeOCguOAgeWDleOBjOWFpeekvuOBl+OBpjPjg7bmnIjjgbvjganjgafou6LogbfjgZfjgabjgYTjgaPjgZ/jgILoqbHjgZvjgovkurrjgoLjgYTjgarjgY/jgarjgorjgIHkvJrnpL7jga7kuK3jgaflrozlhajjgavjgbLjgajjgorjgbzjgaPjgaHjgavjgarjgaPjgZ/jgIIKCuacnTjmmYLjgYvjgokyMOaZgumBjuOBjuOBvuOBp+WDjeOBjeOAgeazo+OBjeOBneOBhuOBq+OBquOCiuOBquOBjOOCieWHuuWLpOOBl+OBpuOBhOOBnwrllrbmpa3ogbfjgaDjgaPjgZ/jga7jgafjgIHmr47ml6XmnJ045pmC6aCD44Gr5Ye65Yuk44GX44Gm44CB5LuV5LqL44GM57WC44KP44KL44Gu44GvMjDmmYLpgY7jgY7jgILmr47ml6XmnKzlvZPjgavoi6bjgZfjgY/jgabjgIHms6PjgY3jgZ3jgYbjgavjgarjgorjgarjgYzjgonkvJrnpL7jgbjlkJHjgYvjgaPjgabjgYTjgZ/jgILjgYLjgb7jgorjgavjgoLoi6bjgZfjgY/jgabjgIHlrp/pmpvjgavms6PjgYTjgZ/ml6XjgoLjgYLjgaPjgZ/jgIIKCuWtpueUn+aZguS7o+OBrueJqeiyqee1jOmok+OBruOBiuOBi+OBkuOBp+OAgeWQjOacn+OBruS4reOBp+S4gOeVquacgOWIneOBq+Wlkee0hOOCkuWPluOCjOOBnwrjgZ3jgpPjgarkvJrnpL7lk6HnlJ/mtLvjga7kuK3jgafllK/kuIDoia/jgYvjgaPjgZ/jga7jga/jgIHlrabnlJ/jga7poIPjgYvjgonnianosqnjgoTjg5Pjgrjjg43jgrnjgpLntYzpqJPjgZfjgabjgYTjgZ/jgZPjgajjgILjgZ3jga7ntYzpqJPjgoLjgYLjgaPjgabjgIHlkIzmnJ/jga7kuK3jgafkuIDnlarmnIDliJ3jgavlpZHntITjgpLlj5bjgovjgZPjgajjgYzjgafjgY3jgZ/jgILjgZPjgozjga/mnKzlvZPjgavlrInjgZfjgYvjgaPjgZ/jgIIKCjQsMDAw5LiH5YaG44Gu5a6244KS5aWR57SE44GX44Gm44KC44CB44Oc44O844OK44K544GvOOS4h+WGhuOBoOOBo+OBnwrjgZ/jgaDjgIHjgZPjga7ntYzpqJPjgYzpgIbjgavjgIHku4rjgb7jgafjgafkuIDnlarjgIzkvJrnpL7lk6HjgajjgYTjgYbku5XntYTjgb/jgI3jgavntbbmnJvjgZnjgovjgY3jgaPjgYvjgZHjgavjgarjgaPjgZ/jgILlvZPmmYLjgIHlg5Xjga80LDAwMOS4h+WGhuOBruWutuOCkuWlkee0hOOBmeOCi+OBk+OBqOOBjOOBp+OBjeOBn+OAguWWtualreiBt+OBoOOBo+OBn+OBruOBp+OAgeOAjOOBk+OCjOOBoOOBkeWkp+OBjeOBquWlkee0hOOCkuWPluOBo+OBn+OCieOAgeODnOODvOODiuOCueOBr+OBhOOBj+OCieOCguOCieOBiOOCi+OCk+OBoOOCjeOBhuOAjeOBqOalveOBl+OBv+OBq+OBl+OBpuOBhOOBn+OAggoK57WQ5p6c44KS5Ye644GX44Gm44KC5oiQ5p6c44GM5Y+O5YWl44Gr5Y+N5pig44GV44KM44Gq44GE44GT44Go44Gr6KGd5pKD44KS5Y+X44GR44GfCuWun+mam+OBq+OCguOCieOBo+OBn+ODnOODvOODiuOCueOBr+OAgeOBn+OBo+OBnzjkuIflhobjgaDjgaPjgZ/jgII0LDAwMOS4h+WGhuOBruWutuOCkuWjsuOBo+OBpuOAgeWDleOBjOOCguOCieOBiOOCi+OBruOBrzjkuIflhobjgILmnKzlvZPjgavjgbPjgaPjgY/jgorjgZfjgZ/jgZfjgIHplovjgYTjgZ/lj6PjgYzloZ7jgYzjgonjgarjgYvjgaPjgZ/jgILjgIzjgZPjgozjgaDjgZHntZDmnpzjgpLlh7rjgZfjgabjgoLjgIHmiJDmnpzjgYzjgbvjgajjgpPjganlj47lhaXjgavlj43mmKDjgZXjgozjgarjgYTku5XkuovjgYzjgYLjgovjgpPjgaDjgI3jgajlvLfng4jjgavmhJ/jgZjjgZ/jgIIKCuOBneOBrueerOmWk+OAgeOAjOeJqeiyqeOBp+mjn+OBo+OBpuOBhOOBk+OBhuOAjeOBqOaxuuOCgeOBnwrlrabnlJ/mmYLku6PjgYvjgonnianosqnjgpLjgYvjgZjjgaPjgabjgYTjgZ/jgYvjgonjgZPjgZ3jgIHkvZnoqIjjgavooZ3mkoPjgaDjgaPjgZ/jgILnianosqnjgarjgonjgIHoh6rliIbjgYzpoJHlvLXjgaPjgabliKnnm4rjgpLlh7rjgZfjgZ/liIbjgaDjgZHoh6rliIbjgavov5TjgaPjgabjgY/jgovjgILjgZ3jga7pgZXjgYTjgpLlvLfjgY/mhJ/jgZjjgabjgIHjgIzjgoLjgYbnianosqnjgafpo5/jgaPjgabjgYTjgZPjgYbjgI3jgajmsbrjgoHjgZ/jgIIKCiMjIOOCouODleOCv+ODvAoK6ISx44K144Op44GX44GmM+ODtuaciOOBp+aciOWIqTEwMOS4h+WGhuOCkumBlOaIkArkvJrnpL7lk6HjgpLjgZfjgarjgYzjgonlia/mpa3jgafnianosqnjgpLntprjgZHjgabjgYTjgabjgIHlvZPmmYLjgZnjgafjgasx5pelMuaZgumWk+OBu+OBqeOBruS9nOalreOBp+acrOalreS7peS4iuOBruWIqeebiuOBjOWHuuOBpuOBhOOBn+OAguS8muekvuWToeOBrzHml6U45pmC6ZaT5Lul5LiK5YON44GE44Gm5omL5Y+W44KKMTfkuIflhobjgILkuIDmlrnjgIHnianosqnjga8x5pelMuaZgumWk+OBu+OBqeOBp+aciOWIqTIw5LiH5YaG44G744Gp5Ye644Gm44GE44Gf44CCCgrjgIzpoJHlvLXjgaPjgZ/liIbjgaDjgZHntZDmnpzjgYzov5TjgaPjgabjgY/jgovkuJbnlYzjgI3jgpLpgbjjgpPjgafohLHjgrXjg6njgZfjgZ8K5Lya56S+44Gn44GvNCwwMDDkuIflhobjga7lrrbjgpLlpZHntITjgZfjgabjgoLjg5zjg7zjg4rjgrnjga845LiH5YaG44CC5LiA5pa544CB54mp6LKp44Gv6Ieq5YiG44GM6aCR5by144Gj44Gm5Yip55uK44KS5Ye644GX44Gf5YiG44Gg44GR44CB44Gd44Gu57WQ5p6c44GM6Ieq5YiG44Gr6L+U44Gj44Gm44GP44KL44CC44CM44Gg44Gj44Gf44KJ44CB44GT44Gj44Gh44Gr5YiH44KK5pu/44GI44KI44GG44CN44Go5oCd44GE44CB5Lya56S+44KS6L6e44KB44Gm54mp6LKp44Gr6ZuG5Lit44GZ44KL44GT44Go44KS5rG644KB44Gf44CCCgrnianosqnkuIDmnKzjgavliIfjgormm7/jgYjjgIHohLHjgrXjg6njgYvjgokz44O25pyI44Gn5pyI5YipMTAw5LiH5YaG44G+44Gn5Ly444Gw44GX44GfCuWJr+alreOBqOOBl+OBpuWPluOCiue1hOOCk+OBp+OBhOOBn+eJqeiyqeOBq+acrOagvOeahOOBq+aZgumWk+OCkuS9v+OBiOOCi+OCiOOBhuOBq+OBquOCiuOAgeiEseOCteODqeOBl+OBpuOBi+OCiTPjg7bmnIjjgafmnIjliKkxMDDkuIflhobjgpLpgZTmiJDjgZnjgovjgZPjgajjgYzjgafjgY3jgZ/jgIIKCuaZgumWk+OBq+OCguWgtOaJgOOBq+OCgue4m+OCieOCjOOBquOBhOeUn+a0u+OBq+OBquOBo+OBnwrku4rjga/mr47ml6Xjgrnjg7zjg4TjgpLnnYDjgovlv4XopoHjgoLjgarjgY/jgIHmnJ3otbfjgY3jgovmmYLplpPjgpLmsJfjgavjgZnjgovlv4XopoHjgoLjgarjgYTjgILmuoDlk6Hpm7vou4rjgavjgoLkuZfjgonjgarjgY/jgabjgYTjgYTjgZfjgIHlq4zjgYTjgarkuIrlj7jjgavnkIbkuI3lsL3jgavmgJLjgonjgozjgovjgZPjgajjgoLjgarjgY/jgarjgaPjgZ/jgILoh6rliIbjgYzlpb3jgY3jgarkurrjgoTku7LplpPjgajkuIDnt5Ljgavku5XkuovjgYzjgafjgY3jgovjgojjgYbjgavjgarjgorjgIHmnKzlvZPjgavjgrnjg4jjg6zjgrnjg5Xjg6rjg7zjgavjgarjgaPjgZ/jgIIKCuOCq+ODleOCp+W3oeOCiuOCkuOBl+OBquOBjOOCieOAgVBDMeOBpOOBp+S7leS6i+OBjOOBp+OBjeOCi+OCiOOBhuOBq+OBquOBo+OBnwrlg5Xjga/jgqvjg5Xjgqflt6HjgorjgYzlpb3jgY3jgarjga7jgafjgIHku4rjgafjga9QQzHjgaTjgpLniYfmiYvjgavjgIHjgYTjgo3jgYTjgo3jgarjgqvjg5XjgqfjgbjooYzjgY3jgarjgYzjgonku5XkuovjgpLjgZfjgabjgYTjgovjgILlg43jgY/loLTmiYDjgpLkvJrnpL7jgavmsbrjgoHjgonjgozjgovjga7jgafjga/jgarjgY/jgIHoh6rliIbjgaflpb3jgY3jgarloLTmiYDjgpLpgbjjgbPjgarjgYzjgonku5XkuovjgYzjgafjgY3jgovjgojjgYbjgavjgarjgaPjgZ/jgIIKCuWFqOWbveOCkuaXheihjOOBl+OBquOBjOOCieS7leS6i+OCkualveOBl+OCgeOCi+OCiOOBhuOBq+OBquOBo+OBnwrjgrnjgq/jg7zjg6vjga7jgqrjg5XkvJrjgYzmr47mnIjjganjgZPjgYvjgZfjgonjgafplovlgqzjgZXjgozjgovjga7jgafjgIHjgZ3jgZPjgavlj4LliqDjgZfjgarjgYzjgonlhajlm73jgbjooYzjgY/mqZ/kvJrjgoLlopfjgYjjgZ/jgILnj77lnLDjga7jgZTlvZPlnLDjgrDjg6vjg6HjgpLpo5/jgbnjgZ/jgorjgIHmnIDpq5jjga7ku7LplpPjgajjgqrjg5XkvJrjgafoqbHjgZfjgZ/jgorjgZnjgovmmYLplpPjgYzmnKzlvZPjgavmpb3jgZfjgYTjgIIKCuS7leS6i+S7sumWk+OBqOODr+ODvOOCseODvOOCt+ODp+ODs+OBq+OCguihjOOBkeOCi+OCiOOBhuOBq+OBquOBo+OBnwrku5Xkuovku7LplpPjgajnrrHmoLnjgoTnhrHmtbfjgarjganjgbjooYzjgY3jgIHoia/jgYTlrr/jgavms4rjgb7jgorjgarjgYzjgonku5XkuovjgpLjgZnjgovjgZPjgajjgoLjgYLjgovjgILml4XooYzjgajku5XkuovjgpLliIbjgZHjgovjga7jgafjga/jgarjgY/jgIHlpb3jgY3jgarloLTmiYDjgbjooYzjgY3jgarjgYzjgonlg43jgZHjgovjgZPjgajjgoLjgIHku4rjga7ml6XjgIXjga7lpKfjgY3jgarlubjjgZvjgavjgarjgaPjgabjgYTjgovjgIIKCuOBiumHkeOBq+OCguS9meijleOBjOOBp+OBjeOAgeOBp+OBjeOCi+OBk+OBqOOBjOWil+OBiOOBnwrku4rjgafjga/jgYLjgovnqIvluqbjgYrph5HjgavjgoLkvZnoo5XjgYzjgafjgY3jgZ/jgILkvJrnpL7lk6HmmYLku6Pjgavjga/jgarjgYvjgarjgYvjgafjgY3jgarjgYvjgaPjgZ/jgIHlvbzlpbPjgajoia/jgYTjgZTpo6/lsYvjgZXjgpPjgbjooYzjgaPjgZ/jgorjgIHoia/jgYTjg5fjg6zjgrzjg7Pjg4jjgpLosrfjgaPjgZ/jgorjgIHkuIDnt5Ljgavml4XooYzjgbjooYzjgaPjgZ/jgorjgZnjgovjgZPjgajjgoLjgafjgY3jgovjgojjgYbjgavjgarjgaPjgZ/jgIIKCuimquWtneihjOOBq+OCguOBiumHkeOBqOaZgumWk+OCkuS9v+OBiOOCi+OCiOOBhuOBq+OBquOBo+OBnwroh6rliIbjga7jgZ/jgoHjgaDjgZHjgafjga/jgarjgY/jgIHopqrjgavjgoLjgYrph5HjgoTmmYLplpPjgpLkvb/jgYjjgovjgojjgYbjgavjgarjgaPjgZ/jgILopqrjgajkuIDnt5LjgavpjozlgInjgbjooYzjgaPjgabpo5/jgbnmranjgY3jgpLjgZfjgZ/jgorjgIHmqKrmtZzjgpLmoYjlhoXjgZfjgZ/jgorjgajjgIHku6XliY3jgarjgonjgarjgYvjgarjgYvjgafjgY3jgarjgYvjgaPjgZ/opqrlrZ3ooYzjgoLjgafjgY3jgovjgojjgYbjgavjgarjgaPjgZ/jgIIKCuWKquWKm+OBl+OBn+WIhuOBoOOBkeOAgee1kOaenOOBqOOBl+OBpui/lOOBo+OBpuOBj+OCi+OCiOOBhuOBq+OBquOBo+OBnwrkuIDnlarlpKfjgY3jgYTjga7jga/jgIHjgaHjgoPjgpPjgajpoJHlvLXjgozjgbDjgIHjgaHjgoPjgpPjgajntZDmnpzjgYzov5TjgaPjgabjgY/jgovjgojjgYbjgavjgarjgaPjgZ/jgZPjgajjgILkvJrnpL7lk6HmmYLku6Pjga/jgIHjganjgozjgaDjgZHpoJHlvLXjgaPjgabjgoLoh6rliIbjga7lj47lhaXjgoTnkrDlooPjgYzlpKfjgY3jgY/lpInjgo/jgonjgZrjgIHjgarjgYvjgarjgYvjgoTjgovmsJfjgpLmjIHjgabjgarjgYvjgaPjgZ/jgIIKCuS7iuOBr+OAjOOChOOCjOOBsOOChOOCi+OBu+OBqee1kOaenOOBjOWkieOCj+OCi+OAjeOBi+OCieOAgeS7leS6i+OBneOBruOCguOBruOBjOalveOBl+OBhArku4rjga/oh6rliIbjgYzjgoTjgaPjgZ/liIbjgaDjgZHntZDmnpzjgYzlpInjgo/jgorjgIHjgZ3jga7miJDmnpzjgoLoh6rliIbjgavov5TjgaPjgabjgY/jgovjgILpoJHlvLXjgovmhI/lkbPjgpLlrp/mhJ/jgafjgY3jgovjgojjgYbjgavjgarjgaPjgZ/jgYvjgonjgZPjgZ3jgIHku5XkuovjgZ3jga7jgoLjga7jgYzjgoLjga7jgZnjgZTjgY/mpb3jgZfjgYTjgZfjgIHku4rjgafjgoLpo73jgY3jgZrjgavntprjgZHjgonjgozjgabjgYTjgovjgIIK">出典：送付台本</a></footer>
+</main></body></html>
